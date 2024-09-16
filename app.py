@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+# Set the page config to open the sidebar by default
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
+
 
 # Cache the loading of the Excel file to avoid reloading every time "Calculate" is pressed
 @st.cache_data
