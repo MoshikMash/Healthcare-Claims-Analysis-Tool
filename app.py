@@ -35,12 +35,6 @@ with st.sidebar:
     # Add download button for 'instruction.pdf'
     file_download_button('instructions.pdf', 'Download Instructions')
 
-    # Add download button for 'data_August24.xlsx'
-    file_download_button('August_2024.xlsx', 'Download August 2024 Data')
-
-    # Add download button for 'data_August23_July24.xlsx'
-    file_download_button('Aug_2023_to_Jul_2024.xlsx', 'Download August 2023 - July 2024 Data')
-
 
 # Cache the computation of averages
 @st.cache_data
