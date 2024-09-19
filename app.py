@@ -16,6 +16,32 @@ def load_data(file):
     return df
 
 
+# File downloader function
+def file_download_button(file_path, label):
+    with open(file_path, "rb") as f:
+        file_data = f.read()
+    return st.download_button(
+        label=label,
+        data=file_data,
+        file_name=file_path.split("/")[-1],  # Extract file name from path
+        mime='application/octet-stream'
+    )
+
+
+# Sidebar section for downloading instruction and data files
+with st.sidebar:
+    st.subheader("Download Files")
+
+    # Add download button for 'instruction.pdf'
+    file_download_button('instructions.pdf', 'Download Instructions')
+
+    # Add download button for 'data_August24.xlsx'
+    file_download_button('August_2024.xlsx', 'Download August 2024 Data')
+
+    # Add download button for 'data_August23_July24.xlsx'
+    file_download_button('Aug_2023_to_Jul_2024.xlsx', 'Download August 2023 - July 2024 Data')
+
+
 # Cache the computation of averages
 @st.cache_data
 def precompute_averages(df):
