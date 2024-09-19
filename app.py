@@ -49,7 +49,7 @@ def precompute_averages(df):
         'quantity_avg_august': august_data['Mtrc Unit Nbr'].mean(),
         'members_avg_august': august_data['Mbr Id'].nunique() / unique_dates_august_data,
         'prev_categories': prev_data['Mdspn Thrptc Clsfctn Gpi 02 Nm'].unique(),
-        'new_categories_august': august_data['Mdspn Thrptc Clsfctn Gpi 02 Nm'].unique()
+        'new_categories_august': august_data['Mdspn Thrptc Clsfctn Gpi 02 Nm'].unique(),
     }
 
     return averages, prev_data, august_data
@@ -280,6 +280,7 @@ with st.sidebar:
 
     if st.checkbox("Quantity Increase"):
         selected_flags.append("Quantity Increase")
+
     if st.checkbox("New Drug (Cost > $1000)"):
         selected_flags.append("New Drug (Cost > $1000)")
 
